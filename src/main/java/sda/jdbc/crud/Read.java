@@ -1,7 +1,5 @@
 package sda.jdbc.crud;
 
-import java.sql.*;
-
 public class Read {
 
     /**
@@ -20,29 +18,9 @@ public class Read {
      * 5. In 'while' block, on resultSet object, use appropriate methods (ex. getInt, getString etc.) to extract data and assign these data to variables. Use column names as methods parameter
      * 6. Now your variables holds data from database. Print this data to console.
      * 7. Cleanup environment - close all your resources (resultSet, statement, connection)
-      */
-
-    private static String DATABASE_HOST = "jdbc:mysql://localhost:3306/sda-jdbc";
-    private static String DATABASE_USERNAME = "root";
-    private static String DATABASE_PASSWORD = "parola";
-
-    public static void main(String[] args) {
-        try {
-            Connection connection = DriverManager.getConnection(DATABASE_HOST, DATABASE_USERNAME, DATABASE_PASSWORD);
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM students");
-            while(rs.next()) {
-                int id = rs.getInt("id");
-                String firstName = rs.getString("first_name");
-                System.out.println("Student: id = " + id + " first name = " + firstName);
-            }
-            rs.close();
-            statement.close();
-            connection.close();
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            throw new RuntimeException("Oops! Something went wrong while trying to get a connection " + ex.getMessage());
-        }
-    }
+     *
+     *
+     * Great job! You successfully fetch data from database using Java.
+     * Now let see how to insert data in db, but first, what about 'executeUpdate' method on Statement interface?
+     */
 }

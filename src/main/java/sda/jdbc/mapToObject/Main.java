@@ -1,7 +1,5 @@
 package sda.jdbc.mapToObject;
 
-import sda.jdbc.mapToObject.persistence.StudentRepository;
-
 public class Main {
 
     /**
@@ -31,11 +29,4 @@ public class Main {
      *
      * Great! You successfully map a row from database to a Java object.
      */
-
-    public static void main(String[] args) {
-        StudentRepository studentRepository = new StudentRepository();
-        System.out.println(studentRepository.findById(1));
-        System.out.println(studentRepository.findById(6));
-    }
-
 }

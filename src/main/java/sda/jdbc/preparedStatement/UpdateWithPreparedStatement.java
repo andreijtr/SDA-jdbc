@@ -1,7 +1,5 @@
 package sda.jdbc.preparedStatement;
 
-import java.sql.*;
-
 public class UpdateWithPreparedStatement {
 
     /**
@@ -25,46 +23,9 @@ public class UpdateWithPreparedStatement {
      * - reading again the same row and check for differences
      *
      * Cleanup environment - close all your resources (result sets, statement, connection)
+     *
+     *
+     * Great job! You just wrote code that can be used to fetch any student from db by their id. Remember, avoid hardcoding sql queries!
+     * What about structuring our code to make it reusable and respect Single Responsibility principle?
      */
-
-    private static String DATABASE_HOST = "jdbc:mysql://localhost:3306/sda-jdbc";
-    private static String DATABASE_USERNAME = "root";
-    private static String DATABASE_PASSWORD = "parola";
-
-    public static void main(String[] args) {
-        try {
-            Connection connection = DriverManager.getConnection(DATABASE_HOST, DATABASE_USERNAME, DATABASE_PASSWORD);
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM students where id = ?");
-            preparedStatement.setInt(1, 1);
-            ResultSet rs = preparedStatement.executeQuery();
-            while(rs.next()) {
-                int id = rs.getInt("id");
-                String firstName = rs.getString("first_name");
-                System.out.println("Student: id = " + id + " first name = " + firstName);
-            }
-
-            PreparedStatement updateStmt = connection.prepareStatement("update students set first_name = ? where id = ?");
-            updateStmt.setString(1, "Ronaldo");
-            updateStmt.setInt(2, 1);
-            int insertedRows = updateStmt.executeUpdate();
-
-            System.out.println("Number of rows updated: " + insertedRows);
-
-            ResultSet updatedRs = preparedStatement.executeQuery();
-            while(updatedRs.next()) {
-                int id = updatedRs.getInt("id");
-                String firstName = updatedRs.getString("first_name");
-                System.out.println("Student: id = " + id + " first name = " + firstName);
-            }
-
-            updatedRs.close();
-            rs.close();
-            preparedStatement.close();
-            updateStmt.close();
-            connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            throw new RuntimeException("Oops! Something went wrong while trying to get a connection " + ex.getMessage());
-        }
-    }
 }

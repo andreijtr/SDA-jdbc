@@ -1,7 +1,5 @@
 package sda.jdbc.crud;
 
-import java.sql.*;
-
 public class Delete {
 
     /**
@@ -20,23 +18,4 @@ public class Delete {
      * 4. Print a message to console and highlight how many rows has been updated
      * 5. Cleanup environment - close all your resources (statement, connection)
      */
-
-    private static String DATABASE_HOST = "jdbc:mysql://localhost:3306/sda-jdbc";
-    private static String DATABASE_USERNAME = "root";
-    private static String DATABASE_PASSWORD = "parola";
-
-    public static void main(String[] args) {
-        try {
-            Connection connection = DriverManager.getConnection(DATABASE_HOST, DATABASE_USERNAME, DATABASE_PASSWORD);
-            Statement statement = connection.createStatement();
-            int deletedRows = statement.executeUpdate("delete from students where id = 6");
-            System.out.println("Number of rows deleted: " + deletedRows);
-
-            statement.close();
-            connection.close();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            throw new RuntimeException("Oops! Something went wrong while trying to get a connection " + ex.getMessage());
-        }
-    }
 }
