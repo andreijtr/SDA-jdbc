@@ -21,6 +21,6 @@ public class Read {
      *
      *
      * Great job! You successfully fetch data from database using Java.
-     * Now let see how to insert data in db, but first, what about 'executeUpdate' method on Statement interface?
+     * What about 'executeUpdate' method on Statement interface?
      */
 }
