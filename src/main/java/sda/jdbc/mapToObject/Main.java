@@ -27,6 +27,6 @@ public class Main {
      * 5. In this class, in main method, create StudentRepository object and get a student with specific id from database.
      * 6. Print student to console
      *
-     * Great! You successfully map a row from database to a Java object.
+     * Great! You successfully map a row from database to a Java object. Maybe Hibernate can help you to do this easily.
      */
 }

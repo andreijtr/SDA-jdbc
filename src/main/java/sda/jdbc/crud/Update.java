@@ -20,5 +20,10 @@ public class Update {
      * 4.2 Print a message to console and highlight how many rows has been updated
      * 5. Now execute the same select query and check if the result is different from the first try
      * 6. Cleanup environment - close all your resources (result sets, statement, connection)
+     *
+     *
+     *  Great job! You successfully applied CRUD operations on database. But you only used hardcoded and fixed SQL statements.
+     *  What if you want to execute parameterized statements?
+     *  Maybe PreparedStatement interface can help you to achieve this.
      */
 }
