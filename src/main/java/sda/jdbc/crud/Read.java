@@ -2,7 +2,8 @@ package sda.jdbc.crud;
 
 public class Read {
 
-    /**
+    /** [first]
+     *
      * Declare 3 constants (private final static) that holds data necessary for database connection:
      *  - db_host: "jdbc:mysql://localhost:3306/sda-jdbc-##"
      *  - db_username
@@ -21,6 +22,6 @@ public class Read {
      *
      *
      * Great job! You successfully fetch data from database using Java.
-     * What about 'executeUpdate' method on Statement interface?
+     * Let insert some data in db. But first, what about 'executeUpdate' method on Statement interface?
      */
 }

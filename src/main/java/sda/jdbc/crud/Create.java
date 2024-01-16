@@ -17,5 +17,7 @@ public class Create {
      * 4. Assign this number to a variable
      * 5. Print a message to console and highlight how many rows has been inserted
      * 6. Cleanup environment - close all your resources (statement, connection)
+     *
+     * Great work! Next you will learn how to remove rows from db tables.
      */
 }

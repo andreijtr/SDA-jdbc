@@ -17,5 +17,7 @@ public class Delete {
      * 3. For deleting a row from table, we'll use 'executeUpdate' method that returns an integer which represent number of affected rows
      * 4. Print a message to console and highlight how many rows has been updated
      * 5. Cleanup environment - close all your resources (statement, connection)
+     *
+     * Very nice! Last operation you should do is update.
      */
 }
